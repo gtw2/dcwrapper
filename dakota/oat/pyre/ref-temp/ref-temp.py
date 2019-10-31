@@ -1,10 +1,10 @@
+import input as inp
 import glob
 import subprocess
 import dakota.interfacing as di
 import sys
 import os
 sys.path.append('../../../../scripts')
-import input as inp
 
 cycdir = '../../../../cyclus-files/oat/pyre/ref-temp/'
 
