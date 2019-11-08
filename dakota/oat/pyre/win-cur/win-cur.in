@@ -1,0 +1,25 @@
+# OAT Study
+# Varying the current of the electrowinner
+
+environment,
+        tabular_data,
+                tabular_data_file = 'win-cur.dat'
+
+method,
+        multidim_parameter_study
+    partitions = 5
+
+variables,
+        continuous_design = 1
+    lower_bounds        4
+    upper_bounds        10
+    descriptors         'cur'
+
+interface,
+        fork
+            analysis_drivers = 'python win-cur.py'
+
+responses,
+        num_objective_functions = 1
+        no_gradients
+        no_hessians

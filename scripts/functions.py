@@ -25,8 +25,8 @@ def isotope_total_cum(cur, num, in_dict):
             'ON transactions.resourceid = resources.resourceid '
             'LEFT OUTER JOIN compositions '
             'ON resources.qualid = compositions.qualid '
-            'WHERE Commodity =: stream AND nucid =: num '
-            ' GROUP BY time ', {"stream": stream, "num": num}).fetchall()
+            'WHERE Commodity =:stream AND nucid =:num '
+            ' GROUP BY time ', {"stream":stream, "num":num}).fetchall()
         isotope_list = get_timeseries(isotopes, duration, False)
         isotope_total = np.sum(isotope_list)
         isotope_total_list.append(isotope_total)
