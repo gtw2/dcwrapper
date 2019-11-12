@@ -1,0 +1,25 @@
+# OAT Study
+# Varying the flowrate of the electrowinner
+
+environment,
+        tabular_data,
+                tabular_data_file = 'win-flow.dat'
+
+method,
+        multidim_parameter_study
+    partitions = 5
+
+variables,
+        continuous_design = 1
+    lower_bounds        20
+    upper_bounds        45
+    descriptors         'flow'
+
+interface,
+        fork
+            analysis_drivers = 'python win-flow.py'
+
+responses,
+        num_objective_functions = 1
+        no_gradients
+        no_hessians

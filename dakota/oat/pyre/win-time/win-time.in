@@ -1,0 +1,25 @@
+# OAT Study
+# Varying the reprocessing time of the electrowinner
+
+environment,
+        tabular_data,
+                tabular_data_file = 'win-time.dat'
+
+method,
+        multidim_parameter_study
+    partitions = 5
+
+variables,
+        continuous_design = 1
+    lower_bounds        10
+    upper_bounds        40
+    descriptors         'time'
+
+interface,
+        fork
+            analysis_drivers = 'python win-time.py'
+
+responses,
+        num_objective_functions = 1
+        no_gradients
+        no_hessians
